@@ -1,0 +1,20 @@
+<p>List view: Danh sach content va Tooltip</p>
+
+<app-tooltip
+  [showTooltip]="showTooltip"
+  [tooltipText]="tooltipText"
+  [topPosition]="topPosition"
+  [leftPosition]="leftPosition"
+>
+</app-tooltip>
+<div class="mx-auto-850px pt-3">
+  <ul class="list-unstyled">
+    <li
+      *ngFor="let react of reactors"
+      (mouseover)="onHover(react.name, $event)"
+      (mouseout)="onMouseout()"
+    >
+      <h2>{{ react.name | slice: 0:17 }}</h2>
+    </li>
+  </ul>
+</div>
